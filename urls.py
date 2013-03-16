@@ -3,6 +3,7 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 
 from mezzanine.core.views import direct_to_template
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 admin.autodiscover()
@@ -89,3 +90,5 @@ urlpatterns = patterns("",
 # pages can use JS, CSS and images.
 handler404 = "mezzanine.core.views.page_not_found"
 handler500 = "mezzanine.core.views.server_error"
+urlpatterns += staticfiles_urlpatterns()
+
